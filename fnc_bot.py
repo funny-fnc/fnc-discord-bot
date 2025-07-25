@@ -23,13 +23,8 @@ film_database = {
         "saisons": {
             "Saison 1": "https://www.france.tv/france-3/lego-ninjago/saison-1/235125-la-legende-des-serpents.html",
             "Saison 2": "https://www.france.tv/france-3/lego-ninjago/saison-2/1119711-l-avenement-des-tenebres.html",
-        }
-    },
-    "dragons": {
-        "description": "Dragons - série animée dans l'univers de Krokmou.",
-        "saisons": {
-            "Saison 1": "https://www.example.com/dragons/s1",
-            "Saison 2": "https://www.example.com/dragons/s2"
+            "saison 3": "https://www.france.tv/france-3/lego-ninjago/saison-3/275721-l-ennemi-invisible.html"
+
         }
     }
 }
