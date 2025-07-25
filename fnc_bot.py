@@ -19,13 +19,26 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 # Base de données simple (films / séries)
 film_database = {
     "ninjago": {
-        "description": "Ninjago - série d'animation de fantasy épique avec des héros qui sont des ninjas.",
+        "description": "Ninjago - série d'animation de fantasy épique avec des héros mais ce sont des ninjas.",
         "saisons": {
             "Saison 1": "https://www.france.tv/france-3/lego-ninjago/saison-1/235125-la-legende-des-serpents.html",
             "Saison 2": "https://www.france.tv/france-3/lego-ninjago/saison-2/1119711-l-avenement-des-tenebres.html",
-            "saison 3": "https://www.france.tv/france-3/lego-ninjago/saison-3/275721-l-ennemi-invisible.html"
-
-        }
+            "Saison 3": "https://www.france.tv/france-3/lego-ninjago/saison-3/275721-l-ennemi-invisible.html",
+            "Saison 4": "https://www.france.tv/france-3/lego-ninjago/saison-4/248355-l-invitation.html",
+            "Saison 5": "https://www.france.tv/france-3/lego-ninjago/saison-5/275013-avis-de-tempete.html",
+            "Saison 6": "https://www.france.tv/france-3/lego-ninjago/saison-6/284991-coup-monte.html",
+            "Saison 7": "https://www.france.tv/france-3/lego-ninjago/saison-7/191673-les-mains-du-temps.html",
+            "Saison 8": "https://www.france.tv/france-3/lego-ninjago/saison-8/543863-le-masque-de-la-tromperie.html",
+            "Saison 9": "https://www.france.tv/france-3/lego-ninjago/ninjago-saison-9/854867-la-mere-de-tous-les-dragons.html",
+            "Saison 10": "https://www.france.tv/france-3/lego-ninjago/ninjago-saison-10/1027329-l-arrivee-des-tenebres.html",
+            "Saison 11": "https://www.france.tv/france-3/lego-ninjago/ninjago-saison-11/1130625-un-potentiel-gache.html",
+            "Saison 12": "https://www.france.tv/france-3/lego-ninjago/ninjago-saison-12/2050659-desirez-vous-entrer-dans-premier-empire.html",
+            "Saison 13": "https://www.france.tv/france-3/lego-ninjago/ninjago-saison-13/2279359-l-ile-inconnue.html",
+            "Saison 14": "https://www.france.tv/france-3/lego-ninjago/3557923-changement-de-cap.html",
+            "Saison 15": "https://www.france.tv/france-3/lego-ninjago/saison-15/4958041-la-fusion-partie-1.html",
+            "Saison 16": "https://www.france.tv/france-3/lego-ninjago/saison-16/5843445-la-lune-de-sang.html",
+            "Saison 17": "https://www.france.tv/france-3/lego-ninjago/saison-17/7075787-les-disparus.html"
+        } 
     }
 }
 
@@ -97,6 +110,10 @@ async def maintenance(interaction: Interaction):
         return await interaction.response.send_message("⛔ Tu n'as pas la permission.", ephemeral=True)
 
     await interaction.response.send_message("🚧 Le bot est en maintenance. Merci de réessayer plus tard.", ephemeral=True)
-
-bot.run(token)
+ # Lancement sécurisé du bot
+try:
+    bot.run(token)
+except Exception as e:
+     print(f"❌ Erreur au démarrage du bot: {e}")
+     input("🔁 Appuie sur Entrée pour fermer...")
 
